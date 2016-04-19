@@ -4,10 +4,10 @@
   "description": "implementation of Bresenham algorithm written in js",
   "main": "lib/bresenham",
   "scripts": {
-    "build": "babel src -d lib",
+    "compile": "babel src -d lib",
     "test": "babel-node ./test.*.js | faucet",
     "lint": "eslint src",
-    "prepublish": "npm run build"
+    "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
