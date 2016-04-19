@@ -1,8 +1,8 @@
-function getSing(num){
+function getSing(num) {
   return num > 0 ? 1 : -1;
 }
 
-function getInitValues(startPoint, finalPoint){
+function getInitValues(startPoint, finalPoint) {
   const abs = Math.abs;
   const diffx = finalPoint.x - startPoint.x;
   const diffy = finalPoint.y - startPoint.y;
@@ -10,28 +10,28 @@ function getInitValues(startPoint, finalPoint){
   return {
     absDiff: {
       x: abs(diffx),
-      y: abs(diffy)
+      y: abs(diffy),
     },
     sign: {
       x: getSing(diffx),
-      y: getSing(diffy)
-    }
-  }
+      y: getSing(diffy),
+    },
+  };
 }
 
-function getBreakFn(sign){
+function getBreakFn(sign) {
   return sign < 0 ?
     (current, final) => current >= final :
     (current, final) => current <= final;
 }
 
-function calcMainCoordinates(absDiff){
+function calcMainCoordinates(absDiff) {
   return absDiff.x > absDiff.y ? ['x', 'y'] : ['y', 'x'];
 }
 
 export function* bresenhamLine(point, finalPoint) {
   const { absDiff, sign } = getInitValues(point, finalPoint);
-  const [ mainCoordinate, coordinate ] = calcMainCoordinates(absDiff);
+  const [mainCoordinate, coordinate] = calcMainCoordinates(absDiff);
 
   const final = finalPoint[mainCoordinate];
 
@@ -48,16 +48,15 @@ export function* bresenhamLine(point, finalPoint) {
 
   let eps = 0;
 
-  for( ; breakFn(mainValue, final); mainValue += mainSign) {
+  for (; breakFn(mainValue, final); mainValue += mainSign) {
     yield {
       [mainCoordinate]: mainValue,
-      [coordinate]: secondValue
-    }
+      [coordinate]: secondValue,
+    };
     eps += secondDiff;
-    if((eps<<1) >= mainDiff) {
+    if ((eps << 1) >= mainDiff) {
       secondValue += secondSign;
       eps -= mainDiff;
     }
   }
-
-};
+}
