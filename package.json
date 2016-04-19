@@ -1,5 +1,5 @@
 {
-  "name": "bresenham",
+  "name": "bresenham-line",
   "version": "1.0.0",
   "description": "implementation of Bresenham algorithm written in js",
   "main": "lib/bresenham",
