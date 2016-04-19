@@ -11,6 +11,7 @@ function buildArray(fn, startPoint, finalPoint){
   return arr;
 }
 
+
 test('Bresenham\'s line algoritm ', (assert) => {
 
   [

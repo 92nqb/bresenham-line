@@ -19,14 +19,15 @@ function getInitValues(startPoint, finalPoint){
   }
 }
 
-function inLoop(sign, currentP, finalP){
-  return sign < 0 ? currentP >= finalP : currentP <= finalP;
+function getBreakFn(sign){
+  return sign < 0 ?
+    (current, final) => current >= final :
+    (current, final) => current <= final;
 }
 
 function calcMainCoordinates(absDiff){
   return absDiff.x > absDiff.y ? ['x', 'y'] : ['y', 'x'];
 }
-
 
 export function* bresenhamLine(point, finalPoint) {
   const { absDiff, sign } = getInitValues(point, finalPoint);
@@ -40,12 +41,14 @@ export function* bresenhamLine(point, finalPoint) {
   const mainDiff = absDiff[mainCoordinate];
   const secondDiff = absDiff[coordinate];
 
+  const breakFn = getBreakFn(mainSign);
+
   let mainValue = point[mainCoordinate];
   let secondValue = point[coordinate];
 
   let eps = 0;
 
-  for( ; inLoop(mainSign, mainValue, final); mainValue += mainSign) {
+  for( ; breakFn(mainValue, final); mainValue += mainSign) {
     yield {
       [mainCoordinate]: mainValue,
       [coordinate]: secondValue
