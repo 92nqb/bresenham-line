@@ -10,6 +10,7 @@ You can install bresenham-line using npm.
 
 ```
 npm install --save bresenham-line
+
 ```
 
 
