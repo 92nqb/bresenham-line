@@ -1,5 +1,5 @@
 import test from 'tape';
-import { bresenhamLine } from './src/bresenham';
+import { line } from './src/bresenham';
 
 function buildArray(fn, startPoint, finalPoint){
   const arr = [];
@@ -97,7 +97,7 @@ test('Bresenham\'s line algoritm ', (assert) => {
     }
   ].forEach((ele) => {
     const { start, final, expect } = ele;
-    const points = buildArray(bresenhamLine, start, final);
+    const points = buildArray(line, start, final);
     assert.deepEqual(points, expect);
   });
 
