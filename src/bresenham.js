@@ -29,7 +29,7 @@ function calcMainCoordinates(absDiff) {
   return absDiff.x > absDiff.y ? ['x', 'y'] : ['y', 'x'];
 }
 
-export function* bresenhamLine(point, finalPoint) {
+export function* line(point, finalPoint) {
   const { absDiff, sign } = getInitValues(point, finalPoint);
   const [mainCoordinate, coordinate] = calcMainCoordinates(absDiff);
 
