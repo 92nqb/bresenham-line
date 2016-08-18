@@ -5,6 +5,12 @@
 
 [![Build Status](https://travis-ci.org/nquicenob/bresenham-line.svg?branch=master)](https://travis-ci.org/nquicenob/bresenham-line)
 
+**bresenham-line** algorithm for node and Browserify.
+
+## Warning
+
+You need to have support for [ES6 generators](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/function*)
+
 ## Installation
 You can install bresenham-line using npm.
 
@@ -17,7 +23,7 @@ Just require the module.
 
 ```javascript
 // es5
-var line = require('bresenham-line').line;
+var line = require('bresenham-line');
 
 var genLine = line({
   x: 1,
@@ -35,7 +41,7 @@ console.dir(genLine.next().value); // { x: 3, y: 1 }
 
 ```javascript
 // es6
-import { line } from 'bresenham-line';
+import line from 'bresenham-line';
 
 const startPoint = {
   x: 1,
