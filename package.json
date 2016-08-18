@@ -32,22 +32,18 @@
   },
   "homepage": "https://github.com/nquicenob/bresenham-line#readme",
   "devDependencies": {
-    "babel-cli": "6.7.x",
-    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-cli": "^6.11.4",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
     "babel-plugin-transform-es2015-block-scoping": "^6.10.1",
     "babel-plugin-transform-es2015-computed-properties": "^6.8.0",
     "babel-plugin-transform-es2015-destructuring": "^6.9.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.11.5",
-    "eslint": "2.8.x",
-    "eslint-config-airbnb": "6.2.x",
-    "eslint-plugin-import": "1.5.x",
-    "faucet": "0.0.x",
+    "eslint": "^3.3.1",
+    "eslint-config-airbnb-base": "^5.0.2",
+    "eslint-plugin-import": "^1.13.0",
+    "faucet": "0.0.1",
     "rimraf": "^2.5.4",
-    "tape": "4.5.x"
-  },
-  "engines": {
-    "node": ">=4.4.3"
+    "tape": "^4.6.0"
   }
 }

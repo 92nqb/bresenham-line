@@ -1,5 +1,5 @@
 import test from 'tape';
-import { line } from './src/bresenham';
+import line from './src/bresenham-line';
 
 function buildArray(fn, startPoint, finalPoint){
   const arr = [];
