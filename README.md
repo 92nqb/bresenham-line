@@ -14,8 +14,8 @@ You need to have support for [ES6 generators](https://developer.mozilla.org/es/d
 ## Installation
 You can install bresenham-line using npm.
 
-```
-npm install --save bresenham-line
+```sh
+$ npm install --save bresenham-line
 ```
 
 ## Usage
