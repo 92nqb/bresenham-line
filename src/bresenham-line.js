@@ -21,15 +21,15 @@ function getInitValues(startPoint, finalPoint) {
 
 function getBreakFn(sign) {
   return sign < 0 ?
-    (current, final) => current >= final :
-    (current, final) => current <= final;
+    (current, final) => current >= final
+    : (current, final) => current <= final;
 }
 
 function calcMainCoordinates(absDiff) {
   return absDiff.x > absDiff.y ? ['x', 'y'] : ['y', 'x'];
 }
 
-export function* line(point, finalPoint) {
+export default function* line(point, finalPoint) {
   const { absDiff, sign } = getInitValues(point, finalPoint);
   const [mainCoordinate, coordinate] = calcMainCoordinates(absDiff);
 

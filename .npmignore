@@ -1,1 +1,8 @@
 src/
+.editorconfig
+.idea/
+.nvmrc
+/*.tgz
+/.travis.yml
+test.bresenham-line.js
+coverage
